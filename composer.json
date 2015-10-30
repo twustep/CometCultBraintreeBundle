@@ -1,18 +1,19 @@
 {
-    "name": "cometcult/braintree-bundle",
+    "name": "twustep/braintree-bundle",
     "type": "symfony-bundle",
     "description": "Symfony 2 Bundle for Braintree's PHP client library",
     "keywords": ["braintree", "bundle", "payment", "credit", "card"],
     "homepage": "http://github.com/twustep/CometCultBraintreeBundle",
     "license": "MIT",
     "authors": [
-        {
-            "name": "Karol Sójko",
-            "email": "zoja87@gmail.com"
-        },
+        
         {
             "name": "Matías Penela",
             "email": "map@matiaz.com"
+        },
+        {
+            "name": "Karol Sójko",
+            "email": "zoja87@gmail.com"
         }
     ],
     "require": {
