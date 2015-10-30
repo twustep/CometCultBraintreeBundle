@@ -23,6 +23,7 @@ class BraintreeFactorySpec extends ObjectBehavior
     {
         $this->get('customer')->shouldHaveType('Braintree_Customer');
         $this->get('creditCard')->shouldHaveType('Braintree_CreditCard');
+       
     }
 
     function it_should_throw_exception_if_getting_not_available_service()

@@ -5,6 +5,7 @@ namespace CometCult\BraintreeBundle\Factory;
 use CometCult\BraintreeBundle\Exception\InvalidServiceException;
 use Braintree_Configuration;
 
+
 /**
  * Factory for creating Braintree services
  */
@@ -18,12 +19,16 @@ class BraintreeFactory
      * @param string $publicKey
      * @param string $privateKey
      */
-    public function __construct($environment, $merchantId, $publicKey, $privateKey)
+    
+    private $merchantAccountId;
+    
+    public function __construct($environment, $merchantId, $publicKey, $privateKey, $merchantAccountId)
     {
         Braintree_Configuration::environment($environment);
         Braintree_Configuration::merchantId($merchantId);
         Braintree_Configuration::publicKey($publicKey);
         Braintree_Configuration::privateKey($privateKey);
+        $this->merchantAccountId = $merchantAccountId;
     }
 
     /**
@@ -37,10 +42,19 @@ class BraintreeFactory
     public function get($serviceName, array $attributes = array())
     {
         $className = 'Braintree_' . ucfirst($serviceName);
-        if(class_exists($className) && method_exists($className, 'factory')) {
+        if(class_exists($className) && method_exists($className, 'factory') && $serviceName != 'WebhookNotification') {
             return $className::factory($attributes);
         } else {
-            throw new InvalidServiceException('Invalid service ' . $serviceName);
+            //throw new InvalidServiceException('Invalid service ' . $serviceName);
+            //edited by Matias Penela to fix service invalid error. 
+            return $className;
         }
+        
+    
     }
+    
+    public function getMerchantAccountId(){
+        return $this->merchantAccountId;
+    }
+    
 }

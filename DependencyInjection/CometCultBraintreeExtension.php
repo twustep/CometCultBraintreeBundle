@@ -37,5 +37,9 @@ class CometCultBraintreeExtension extends Extension
         if (isset($config['private_key'])) {
             $container->setParameter('comet_cult_braintree.private_key', $config['private_key']);
         }
+        
+        if (isset($config['merchant_account_id'])) {
+            $container->setParameter('comet_cult_braintree.merchant_account_id', $config['merchant_account_id']);
+        }
     }
 }

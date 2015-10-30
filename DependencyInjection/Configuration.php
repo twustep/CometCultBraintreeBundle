@@ -41,6 +41,11 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                     ->info('your Braintree private key')
                 ->end()
+                ->scalarNode('merchant_account_id')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                    ->info('your Braintree merchant account id')
+                ->end()
             ->end();
 
         return $treeBuilder;

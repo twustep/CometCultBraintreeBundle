@@ -4,4 +4,4 @@ parameters:
 services:
   comet_cult_braintree.factory:
     class:  "%comet_cult_braintree.factory.class%"
-    arguments: ["%comet_cult_braintree.environment%", "%comet_cult_braintree.merchant_id%", "%comet_cult_braintree.public_key%", "%comet_cult_braintree.private_key%"]
+    arguments: ["%comet_cult_braintree.environment%", "%comet_cult_braintree.merchant_id%", "%comet_cult_braintree.public_key%", "%comet_cult_braintree.private_key%", "%comet_cult_braintree.merchant_account_id%"]
