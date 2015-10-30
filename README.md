@@ -15,7 +15,7 @@ Just add to your composer.json file:
 ```json
 {
     "require": {
-        "cometcult/braintree-bundle": "dev-master"
+        "twustep/braintree-bundle": "dev-master"
     }
 }
 ```
@@ -48,6 +48,7 @@ comet_cult_braintree:
   merchant_id: your_merchant_id
   public_key: your_public_key
   private_key: your_private_key
+  merchant_account_id: your_merchant_account_id
 ```
 
 For more info about the configuration variables see [Braintree docs](https://www.braintreepayments.com/docs/php/guide/getting_paid#configuration)
