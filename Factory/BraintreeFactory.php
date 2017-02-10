@@ -28,6 +28,7 @@ class BraintreeFactory
         Braintree_Configuration::merchantId($merchantId);
         Braintree_Configuration::publicKey($publicKey);
         Braintree_Configuration::privateKey($privateKey);
+        Braintree_Configuration::sslVersion(6); //hardcoding to CURL_SSLVERSION_TLSv1_2
         $this->merchantAccountId = $merchantAccountId;
     }
 
